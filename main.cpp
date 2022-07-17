@@ -26,13 +26,26 @@ void InsertarNodo (int dato, nodo *&arbol){ // Inserta el nodo a la memoria de a
         InsertarNodo (dato, arbol->der); 
 }
 
+void Mostrar_Preorden (nodo *arbol){
+    if (arbol == NULL)
+        return;
+
+    cout<< arbol->dato << " " << endl;
+    Mostrar_Preorden (arbol->isq);
+    Mostrar_Preorden (arbol->der);
+}
 
 int main (){
     nodo *Arbol = NULL;
 
     InsertarNodo (20, Arbol);
+    InsertarNodo (10, Arbol);
+    InsertarNodo (22, Arbol);
+    InsertarNodo (19, Arbol);
+    InsertarNodo (15, Arbol);
+    InsertarNodo (21, Arbol);
 
-    cout<< "El dato de la raiz es: " << Arbol->dato << endl;
+    Mostrar_Preorden (Arbol);
 
     return 0;
 }
