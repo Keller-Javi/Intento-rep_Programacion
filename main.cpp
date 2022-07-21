@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Clase.h"
 
 using namespace std;
 
@@ -36,16 +37,29 @@ void Mostrar_Preorden (nodo *arbol){
 }
 
 int main (){
-    nodo *Arbol = NULL;
+    //nodo *Arbol = NULL;
 
-    InsertarNodo (20, Arbol);
+    Clase obj1(1,8), *obj2 = new Clase(); // Inicializa num1 = 1 y num2 = 9
+
+    cout<< "Los datos del objeto 1 son:" << endl;
+    cout<< "El dato de num1 es: " << obj1.getNum1() << endl;
+    cout<< "El valor de num2 es: " << obj1.getNum2() << endl;
+
+    obj2->SetNum1(4);
+    obj2->SetNum2(3);
+
+    cout<< "\nLos datos del objeto 2 son:" << endl;
+    cout<< "El dato de num1 es: " << obj2->getNum1() << endl;
+    cout<< "El valor de num2 es: " << obj2->getNum2() << endl;
+
+    /*InsertarNodo (20, Arbol);
     InsertarNodo (10, Arbol);
     InsertarNodo (22, Arbol);
     InsertarNodo (19, Arbol);
     InsertarNodo (15, Arbol);
     InsertarNodo (21, Arbol);
 
-    Mostrar_Preorden (Arbol);
+    Mostrar_Preorden (Arbol);*/
 
     return 0;
 }
